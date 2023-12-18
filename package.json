@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "study_with_friend",
+=======
   "name": "demo2",
+>>>>>>> 3f1fc578f42e382342434f250e631aa8c8b5bf53
   "version": "0.1.0",
   "private": true,
   "dependencies": {
