@@ -1,0 +1,46 @@
+.Login-Container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.title {
+  padding: 60px;
+  margin: 0 auto;
+  color: brown;
+  font-size: 32px;
+  text-shadow: 1px 1px;
+  font-weight: 600;
+}
+.ForgotPassword {
+  padding: 10px;
+  text-align: end;
+  color: red;
+  font-size: 13px;
+}
+.logout {
+  font-size: 15px;
+  font-weight: 500;
+}
+.titleU {
+  margin-bottom: 5px;
+  font-size: 13px;
+  font-weight: 300;
+}
+input {
+  padding: 10px;
+  outline: none;
+
+  &:hover {
+    background-color: #dedede;
+  }
+}
+button {
+  background-color: red;
+  padding: 10px;
+}
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed !important;
+  font-weight: 700;
+}
