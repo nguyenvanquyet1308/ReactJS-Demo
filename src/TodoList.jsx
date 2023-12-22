@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
-
 import "./DemoTodoList.css";
+
 function DemoTodoList() {
-  useEffect(() => {
-    const dataItem = localStorage.getItem("myData");
-    if (dataItem) {
-      setAdd(JSON.parse(dataItem));
-    }
-  }, []);
+  //đọc dữ liệu từ localStorage
+  const ReadData = JSON.parse(localStorage.getItem("Data"));
 
   const [text, setText] = useState("");
-  const [add, setAdd] = useState([]);
+  const [add, setAdd] = useState(ReadData ?? []);
+  //lưu vào localStorage
+  useEffect(() => {
+    localStorage.setItem("Data", JSON.stringify(add));
+  }, [add]);
+
   const AddOfPerson = (id) => {
     if (text.trim() === "") {
       alert("Nhập vào đi thằng ngu");
@@ -28,6 +29,7 @@ function DemoTodoList() {
     const deleteofItem = add.filter((add) => add.id !== id);
     setAdd(deleteofItem);
   };
+
   return (
     <div className="TodoList">
       <input
@@ -52,4 +54,5 @@ function DemoTodoList() {
     </div>
   );
 }
+
 export default DemoTodoList;
