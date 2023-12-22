@@ -1,20 +1,23 @@
 import "./Login.css";
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import { toast } from "react-toastify";
 function Login() {
   const [gmail, setGmail] = useState();
   const [password, setPassword] = useState();
-  const Validate = () => {
-    if (gmail === "" || gmail === null) {
-      toast.error("Vui lòng nhập gmail và password");
-      return;
-    }
-    if (password === "" || password === null) {
-      toast.error("Vui lòng nhập gmail và password");
-      return;
-    }
-  };
+  // const Validate = () => {
+  //   if (gmail === "" || gmail === null) {
+  //     toast.error("Vui lòng nhập gmail và password");
+  //     return;
+  //   }
+  //   if (password === "" || password === null) {
+  //     toast.error("Vui lòng nhập gmail và password");
+  //     return;
+  //   }
+  // };
   return (
     <div className="Login-Container col-4 ">
       <div className="title">Login</div>
@@ -35,12 +38,12 @@ function Login() {
       <div className="ForgotPassword">Quên mật khẩu ?</div>
       <button
         className={gmail && password ? "active" : ""}
-        // disabled={gmail && password ? false : true}
-        onClick={() => Validate()}
+        disabled={gmail && password ? false : true}
       >
         Login
       </button>
-      <label className="Logout" htmlFor="">
+      <label className="Logout" htmlFor="" >
+        <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" />
         Logout
       </label>
     </div>

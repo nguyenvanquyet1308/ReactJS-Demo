@@ -42,5 +42,4 @@ button:disabled,
 button[disabled] {
   background-color: #cccccc;
   cursor: not-allowed !important;
-  font-weight: 700;
 }
